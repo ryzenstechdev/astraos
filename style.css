@@ -5,15 +5,6 @@ body {
     background-color: #000;
     color: white;
     overflow-x: hidden;
-    display: flex;
-    justify-content: center; /* Centro il contenuto orizzontalmente */
-    align-items: center; /* Centro il contenuto verticalmente */
-    height: 100vh; /* Altezza del viewport */
-}
-
-.container {
-    position: relative;
-    width: 100%;
 }
 
 .top-bar {
@@ -44,7 +35,8 @@ body {
     position: relative;
     z-index: 2;
     text-align: center;
-    width: 100%; /* Occupa tutta la larghezza */
+    width: 100%;
+    height: calc(100vh - 60px); /* Sottrai l'altezza della topbar */
 }
 
 .video-section #video-background {
@@ -54,7 +46,7 @@ body {
     width: 100%;
     height: 100%;
     z-index: -1;
-    object-fit: cover; /* Riempi tutto lo spazio disponibile */
+    object-fit: cover;
 }
 
 .video-section .text-container {
@@ -62,11 +54,12 @@ body {
     color: white;
     font-family: "Urbanist", sans-serif;
     font-weight: bold;
-    font-size: 36px;
+    font-size: 48px; /* Aumentato il font size */
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    margin-top: -20px; /* Spaziatura superiore ridotta */
 }
 
 .text.small {
-    font-size: 24px;
+    font-size: 36px; /* Aumentato il font size */
     margin-bottom: 10px;
 }
