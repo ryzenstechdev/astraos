@@ -42,10 +42,7 @@ body {
     z-index: 2; /* Posiziona sopra le fette successive */
     text-align: center;
     height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    background: url('New_Project_35.mp4') no-repeat center center fixed;
+    background: url('tuo-video.mp4') no-repeat center top fixed;
     background-size: cover;
 }
 
@@ -63,7 +60,7 @@ body {
     color: white; /* Testo bianco sopra lo sfondo del video */
     font-family: "Urbanist", sans-serif;
     font-weight: bold;
-    font-size: 48px;
+    font-size: 36px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
