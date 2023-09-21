@@ -15,8 +15,8 @@ body {
 
 .top-bar {
     background: rgba(0, 0, 0, 0.8);
-    z-index: 3; /* Posiziona sopra tutte le fette */
-    position: fixed;
+    z-index: 3;
+    position: sticky; /* Imposta la posizione sticky */
     top: 0;
     left: 0;
     width: 100%;
@@ -24,7 +24,7 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
-    backdrop-filter: blur(10px); /* Effetto di blur intenso */
+    backdrop-filter: blur(10px);
 }
 
 .top-bar-logo img {
