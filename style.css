@@ -10,7 +10,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    filter: blur(10px); /* Imposta il blur intenso */
+    filter: blur(10px) brightness(0.2); /* Imposta il blur e la luminosità scura */
 }
 
 #bg-video {
@@ -21,6 +21,7 @@ body {
 
 #splash-screen {
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     position: absolute;
@@ -34,22 +35,18 @@ body {
 
 #text-container {
     text-align: center;
-}
-
-#text-slider {
-    display: inline-block;
-    animation: zoom 2s ease-in-out forwards;
+    animation: fadeIn 2s ease-in forwards; /* Dissolvenza in entrata */
+    color: white; /* Testo bianco sopra sfondo scuro */
 }
 
 .text {
-    color: transparent;
     font-family: "Urbanist", sans-serif;
     font-weight: bold;
     font-size: 36px;
     background: linear-gradient(to right, #ff66b3, #8a2be2);
     -webkit-background-clip: text;
     background-clip: text;
-    margin-right: 20px;
+    margin: 10px;
 }
 
 .large {
@@ -57,20 +54,33 @@ body {
 }
 
 #screenshot-container {
-    text-align: center;
-    margin-top: 20px; /* Aggiungi spazio tra il testo e lo screenshot */
-}
-
-#screenshot {
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    bottom: 20px; /* Imposta la posizione dei screenshot dal basso */
+    left: 0;
     width: 100%;
-    max-width: 600px; /* Imposta la larghezza massima dell'immagine */
 }
 
-@keyframes zoom {
+.screenshot {
+    width: 300px; /* Imposta la larghezza degli screenshot */
+    animation: scrollScreenshots 5s linear infinite; /* Animazione di scorrimento */
+}
+
+@keyframes fadeIn {
     0% {
-        transform: scale(0.1); /* Parti da una dimensione molto piccola */
+        opacity: 0;
     }
     100% {
-        transform: scale(1); /* Arriva a una dimensione normale */
+        opacity: 1;
+    }
+}
+
+@keyframes scrollScreenshots {
+    0% {
+        transform: translateX(0%);
+    }
+    100% {
+        transform: translateX(-200%); /* Scorrimento da sinistra a destra */
     }
 }
