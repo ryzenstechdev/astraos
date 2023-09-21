@@ -36,21 +36,21 @@ body {
 #text-container {
     text-align: center;
     animation: fadeIn 2s ease-in forwards; /* Dissolvenza in entrata */
-    color: white; /* Testo bianco sopra sfondo scuro */
 }
 
 .text {
     font-family: "Urbanist", sans-serif;
     font-weight: bold;
     font-size: 36px;
-    background: linear-gradient(to right, #ff66b3, #8a2be2);
-    -webkit-background-clip: text;
-    background-clip: text;
     margin: 10px;
+    color: white; /* Testo bianco sopra sfondo scuro */
 }
 
 .large {
     font-size: 72px;
+    background: linear-gradient(to right, #ff66b3, #8a2be2); /* Gradiente rosa-violastra */
+    -webkit-background-clip: text;
+    background-clip: text;
 }
 
 #screenshot-container {
