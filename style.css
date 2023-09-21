@@ -16,21 +16,26 @@ body {
     height: 100%;
 }
 
+#screenshot-container {
+    overflow: hidden;
+    width: 50%; /* Regola la larghezza dell'immagine */
+}
+
 #screenshot {
-    width: 100%;
+    width: 200%; /* Per l'animazione di scorrimento più veloce */
     max-height: 100%;
     object-fit: cover;
+    animation: slide 5s linear infinite; /* Regola la velocità dell'animazione */
 }
 
 #text-container {
-    overflow: hidden;
-    white-space: nowrap;
     position: relative;
+    width: 50%; /* Regola la larghezza del testo */
 }
 
 #text-slider {
     display: inline-block;
-    animation: slide 10s linear infinite;
+    animation: zoom 2s ease-in-out infinite alternate; /* Regola la velocità dell'animazione di ingrandimento */
 }
 
 .text {
@@ -56,3 +61,13 @@ body {
         transform: translateX(-100%);
     }
 }
+
+@keyframes zoom {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1.2);
+    }
+}
+
