@@ -1,63 +1,81 @@
 body {
     margin: 0;
     padding: 0;
-    overflow: hidden;
+    font-family: "Urbanist", sans-serif;
 }
 
-#splash-screen {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    position: absolute;
+.top-bar {
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
-    z-index: 2; /* Posiziona il contenuto sopra il video */
-    background: rgba(0, 0, 0, 0.5); /* Sfondo con trasparenza */
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    backdrop-filter: blur(10px); /* Effetto di blur intenso */
 }
 
-#text-container {
-    text-align: center;
-    animation: fadeIn 2s ease-in forwards; /* Dissolvenza in entrata */
-    color: white; /* Testo bianco sopra sfondo scuro */
+.top-bar-logo img {
+    max-height: 40px;
+}
+
+.top-bar-menu a {
+    color: white;
+    text-decoration: none;
+    margin-right: 20px;
+}
+
+.content {
+    margin-top: 80px; /* Spazio per la top bar */
+    background-color: #fff;
+    padding: 20px;
+}
+
+.section-content {
+    display: flex;
+    align-items: center;
+}
+
+.screenshot {
+    flex: 1;
+    max-width: 260px;
+    max-height: 800px;
 }
 
 .text {
-    font-family: "Urbanist", sans-serif;
+    flex: 2;
+    padding: 20px;
+}
+
+.title {
     font-weight: bold;
-    font-size: 36px;
-    margin: 10px;
+    font-size: 24px;
+    color: #000;
+    margin-bottom: 10px;
 }
 
-.large {
-    font-size: 72px;
-    background: linear-gradient(to right, #ff66b3, #8a2be2); /* Gradiente rosa-violastra */
-    -webkit-background-clip: text;
-    background-clip: text;
+.description {
+    font-size: 16px;
+    color: #000;
 }
 
-#video-background {
-    position: absolute;
-    top: 0;
+.bottom-bar {
+    position: fixed;
+    bottom: 0;
     left: 0;
     width: 100%;
-    height: 100%;
-    z-index: 1; /* Posiziona il video sotto il contenuto */
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    backdrop-filter: blur(10px); /* Effetto di blur intenso */
 }
 
-#bg-video {
-    object-fit: cover;
-    width: 100%;
-    height: 100%;
-}
-
-@keyframes fadeIn {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
+.bottom-bar-menu a {
+    color: white;
+    text-decoration: none;
+    margin-right: 20px;
 }
