@@ -4,21 +4,6 @@ body {
     overflow: hidden;
 }
 
-#video-background {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    filter: blur(10px) brightness(0.2); /* Imposta il blur e la luminosità scura */
-}
-
-#bg-video {
-    object-fit: cover;
-    width: 100%;
-    height: 100%;
-}
-
 #splash-screen {
     display: flex;
     flex-direction: column;
@@ -29,13 +14,14 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: 1; /* Posiziona il contenuto sopra il video */
+    z-index: 2; /* Posiziona il contenuto sopra il video */
     background: rgba(0, 0, 0, 0.5); /* Sfondo con trasparenza */
 }
 
 #text-container {
     text-align: center;
     animation: fadeIn 2s ease-in forwards; /* Dissolvenza in entrata */
+    color: white; /* Testo bianco sopra sfondo scuro */
 }
 
 .text {
@@ -43,7 +29,6 @@ body {
     font-weight: bold;
     font-size: 36px;
     margin: 10px;
-    color: white; /* Testo bianco sopra sfondo scuro */
 }
 
 .large {
@@ -53,18 +38,19 @@ body {
     background-clip: text;
 }
 
-#screenshot-container {
-    display: flex;
-    justify-content: space-between;
+#video-background {
     position: absolute;
-    bottom: 20px; /* Imposta la posizione dei screenshot dal basso */
+    top: 0;
     left: 0;
     width: 100%;
+    height: 100%;
+    z-index: 1; /* Posiziona il video sotto il contenuto */
 }
 
-.screenshot {
-    width: 300px; /* Imposta la larghezza degli screenshot */
-    animation: scrollScreenshots 5s linear infinite; /* Animazione di scorrimento */
+#bg-video {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
 }
 
 @keyframes fadeIn {
@@ -73,14 +59,5 @@ body {
     }
     100% {
         opacity: 1;
-    }
-}
-
-@keyframes scrollScreenshots {
-    0% {
-        transform: translateX(0%);
-    }
-    100% {
-        transform: translateX(-200%); /* Scorrimento da sinistra a destra */
     }
 }
