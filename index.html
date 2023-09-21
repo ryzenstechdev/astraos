@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SakuraOS</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: black;
+        }
+
+        #splash-screen {
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        #text-container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: transparent;
+            font-family: "Urbanist", sans-serif;
+            font-weight: bold;
+            background: linear-gradient(to right, #ff66b3, #8a2be2);
+            -webkit-background-clip: text;
+            background-clip: text;
+            font-size: 24px;
+        }
+    </style>
+</head>
+<body>
+    <div id="splash-screen">
+        <img src="tuoscreenshot.png" alt="Screenshot" style="width: 100%; height: 100%;" />
+        <div id="text-container">
+            <div>Welcome to</div>
+            <div style="font-size: 48px;">SakuraOS</div>
+        </div>
+    </div>
+
+    <script>
+        // Mostra lo splash screen dopo 2 secondi
+        setTimeout(function() {
+            document.getElementById("splash-screen").style.display = "block";
+        }, 2000);
+    </script>
+</body>
+</html>
