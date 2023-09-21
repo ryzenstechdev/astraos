@@ -42,7 +42,8 @@ body {
     z-index: 2; /* Posiziona sopra le fette successive */
     text-align: center;
     height: 100vh;
-    background: url('tuo-video.mp4') no-repeat center top fixed;
+    width: 100%; /* Larghezza dello schermo intero */
+    background: url('New_Project_35.mp4') no-repeat center top fixed;
     background-size: cover;
 }
 
