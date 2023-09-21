@@ -1,65 +1,50 @@
 body {
     margin: 0;
     padding: 0;
-    font-family: "Urbanist", sans-serif;
-    background-color: #000;
-    color: white;
-    overflow-x: hidden;
-}
-
-.top-bar {
-    background: rgba(0, 0, 0, 0.8);
-    z-index: 3;
-    position: sticky;
-    top: 0;
-    left: 0;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
-    backdrop-filter: blur(10px);
-}
-
-.top-bar-logo img {
-    max-height: 40px;
-}
-
-.top-bar-menu a {
-    color: white;
-    text-decoration: none;
-    margin-right: 20px;
+    overflow: hidden; /* Rimuove la barra di scorrimento */
 }
 
 .video-section {
-    position: relative;
-    z-index: 2;
-    text-align: center;
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
-    height: calc(100vh - 60px); /* Sottrai l'altezza della topbar */
+    height: 100%;
+    overflow: hidden; /* Rimuove il possibile overflow del video */
+    filter: blur(5px); /* Effetto di blur leggero */
 }
 
-.video-section #video-background {
+#bg-video {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: -1;
     object-fit: cover;
 }
 
-.video-section .text-container {
-    z-index: 4;
+.text-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
     color: white;
+}
+
+.text.large {
     font-family: "Urbanist", sans-serif;
     font-weight: bold;
-    font-size: 48px; /* Aumentato il font size */
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    margin-top: -20px; /* Spaziatura superiore ridotta */
+    font-size: 64px;
+    background: linear-gradient(to right, #ff00cc, #6600ff); /* Gradiante rosa-violastro */
+    -webkit-background-clip: text; /* Per rendere il testo trasparente */
+    background-clip: text;
+    -webkit-text-fill-color: transparent; /* Rende il testo trasparente */
+    margin-bottom: 20px; /* Spaziatura dal testo più piccolo */
 }
 
 .text.small {
-    font-size: 36px; /* Aumentato il font size */
-    margin-bottom: 10px;
+    font-family: "Urbanist", sans-serif;
+    font-weight: 600; /* Semibold */
+    font-size: 36px; /* Dimensione del testo più piccolo */
 }
